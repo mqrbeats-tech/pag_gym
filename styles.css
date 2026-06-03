@@ -1,0 +1,655 @@
+/* ==========================================
+   VARIABLES CSS EN :ROOT
+   ========================================== */
+:root {
+    --color-primario: #FF6B35;
+    --color-acento: #004E89;
+    --color-fondo: #F5F5F5;
+    --color-texto: #333333;
+    --color-blanco: #FFFFFF;
+    --color-gris: #E8E8E8;
+    --radio: 12px;
+    --sombra: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --sombra-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --transicion: all 0.3s ease;
+}
+
+/* ==========================================
+   RESET Y ESTILOS GENERALES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================
+   HEADER Y NAVEGACIÓN
+   ========================================== */
+header {
+    background: linear-gradient(135deg, var(--color-acento) 0%, #0a3a5f 100%);
+    color: var(--color-blanco);
+    padding: 20px 0;
+    box-shadow: var(--sombra);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.logo .slogan {
+    font-size: 12px;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* NAVEGACIÓN CON FLEXBOX OBLIGATORIO */
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    list-style: none;
+}
+
+nav a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: var(--transicion);
+    padding: 8px 12px;
+    border-radius: var(--radio);
+}
+
+nav a:hover {
+    background-color: var(--color-primario);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   SECCIÓN HERO
+   ========================================== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 80px 0;
+    background: linear-gradient(to right, rgba(0, 78, 137, 0.1) 0%, rgba(255, 107, 53, 0.05) 100%);
+}
+
+.hero-content {
+    flex: 1;
+    animation: slideInLeft 0.8s ease;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--color-acento);
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: var(--color-texto);
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.hero-image {
+    flex: 1;
+    animation: slideInRight 0.8s ease;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    transition: var(--transicion);
+}
+
+.hero-image img:hover {
+    transform: scale(1.05);
+    box-shadow: var(--sombra-hover);
+}
+
+/* ==========================================
+   SECCIÓN DE PLANES CON GRID OBLIGATORIO
+   ========================================== */
+.planes {
+    padding: 80px 0;
+    background-color: var(--color-blanco);
+}
+
+.planes h2 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 60px;
+    color: var(--color-acento);
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.planes h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-primario);
+    border-radius: 2px;
+}
+
+/* GRID OBLIGATORIO PARA TARJETAS */
+.planes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.tarjeta {
+    background-color: var(--color-blanco);
+    border: 2px solid var(--color-gris);
+    border-radius: var(--radio);
+    padding: 40px 25px;
+    text-align: center;
+    transition: var(--transicion);
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-primario);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: var(--transicion);
+}
+
+.tarjeta:hover {
+    border-color: var(--color-primario);
+    box-shadow: var(--sombra-hover);
+    transform: translateY(-10px);
+}
+
+.tarjeta:hover::before {
+    transform: scaleX(1);
+}
+
+.tarjeta-destacada {
+    border: 2px solid var(--color-primario);
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(0, 78, 137, 0.05) 100%);
+    transform: scale(1.05);
+    box-shadow: var(--sombra);
+}
+
+.badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.tarjeta-header {
+    margin-bottom: 25px;
+}
+
+.tarjeta-header h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--color-acento);
+}
+
+.precio {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-primario);
+}
+
+.frecuencia {
+    font-size: 14px;
+    color: var(--color-texto);
+    opacity: 0.7;
+}
+
+.caracteristicas {
+    list-style: none;
+    margin: 30px 0;
+    text-align: left;
+}
+
+.caracteristicas li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-gris);
+    font-size: 14px;
+    color: var(--color-texto);
+}
+
+.caracteristicas li:last-child {
+    border-bottom: none;
+}
+
+/* ==========================================
+   SECCIÓN SERVICIOS
+   ========================================== */
+.servicios {
+    padding: 80px 0;
+    background-color: var(--color-fondo);
+}
+
+.servicios h2 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 60px;
+    color: var(--color-acento);
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.servicios h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-primario);
+    border-radius: 2px;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.servicio-card {
+    background-color: var(--color-blanco);
+    padding: 35px 25px;
+    border-radius: var(--radio);
+    text-align: center;
+    transition: var(--transicion);
+    box-shadow: var(--sombra);
+}
+
+.servicio-card:hover {
+    box-shadow: var(--sombra-hover);
+    transform: translateY(-8px);
+}
+
+.servicio-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.servicio-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--color-acento);
+}
+
+.servicio-card p {
+    font-size: 14px;
+    color: var(--color-texto);
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   FORMULARIO DE INSCRIPCIÓN
+   ========================================== */
+.formulario-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--color-acento) 0%, #0a3a5f 100%);
+    color: var(--color-blanco);
+}
+
+.formulario-section h2 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 50px;
+}
+
+.formulario {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+legend {
+    font-size: 18px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: var(--radio);
+    font-size: 14px;
+    font-family: inherit;
+    background-color: var(--color-blanco);
+    color: var(--color-texto);
+    transition: var(--transicion);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+    transform: scale(1.02);
+}
+
+.form-group.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group.checkbox input {
+    width: auto;
+    margin: 0;
+}
+
+.form-group.checkbox label {
+    margin: 0;
+    font-size: 13px;
+}
+
+/* ==========================================
+   BOTONES
+   ========================================== */
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: var(--radio);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transicion);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+.btn-primary:hover {
+    background-color: #e55a25;
+    transform: translateY(-2px);
+    box-shadow: var(--sombra);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-acento);
+    border: 2px solid var(--color-acento);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-acento);
+    color: var(--color-blanco);
+    transform: translateY(-2px);
+}
+
+.btn-large {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+footer {
+    background-color: var(--color-texto);
+    color: var(--color-blanco);
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 15px;
+    color: var(--color-primario);
+}
+
+.footer-slogan {
+    font-size: 13px;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.redes-sociales {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.redes-sociales a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: var(--transicion);
+    font-size: 12px;
+}
+
+.redes-sociales a:hover {
+    background-color: var(--color-acento);
+    transform: translateY(-5px) scale(1.1);
+}
+
+.redes-sociales span {
+    display: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.7;
+    padding: 20px 0;
+}
+
+.footer-bottom a {
+    color: var(--color-primario);
+    text-decoration: none;
+    transition: var(--transicion);
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   ANIMACIONES
+   ========================================== */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    nav ul {
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 50px 0;
+        gap: 30px;
+    }
+
+    .hero-content h2 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .planes,
+    .servicios,
+    .formulario-section {
+        padding: 60px 0;
+    }
+
+    .planes h2,
+    .servicios h2,
+    .formulario-section h2 {
+        font-size: 32px;
+    }
+
+    .planes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta-destacada {
+        transform: scale(1);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h2 {
+        font-size: 28px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    .planes h2,
+    .servicios h2,
+    .formulario-section h2 {
+        font-size: 24px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+}
