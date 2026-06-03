@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitPower Gym - Tu Mejor Versión Comienza Aquí</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>💪 FitPower Gym</h1>
+                <p class="slogan">Tu Mejor Versión Comienza Aquí</p>
+            </div>
+            <!-- NAVEGACIÓN CON FLEXBOX -->
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#planes">Planes</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+        <!-- SECCIÓN HERO CON IMAGEN DE IMPACTO -->
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h2>¡Transforma Tu Cuerpo, Transforma Tu Vida!</h2>
+                <p>Únete a miles de miembros que ya están logrando sus objetivos fitness</p>
+                <button class="btn btn-primary">Comienza Ahora</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop" alt="Atleta en entrenamiento">
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE PLANES/SERVICIOS CON GRID -->
+        <section id="planes" class="planes">
+            <h2>Nuestros Planes</h2>
+            <div class="planes-grid">
+                <!-- TARJETA 1 -->
+                <article class="tarjeta">
+                    <div class="tarjeta-header">
+                        <h3>Plan Basic</h3>
+                        <span class="precio">$29.99</span>
+                        <span class="frecuencia">/mes</span>
+                    </div>
+                    <ul class="caracteristicas">
+                        <li>✓ Acceso a equipos</li>
+                        <li>✓ Horario 6am-10pm</li>
+                        <li>✓ Clases grupales</li>
+                    </ul>
+                    <button class="btn btn-outline">Seleccionar</button>
+                </article>
+
+                <!-- TARJETA 2 -->
+                <article class="tarjeta tarjeta-destacada">
+                    <div class="badge">POPULAR</div>
+                    <div class="tarjeta-header">
+                        <h3>Plan Pro</h3>
+                        <span class="precio">$59.99</span>
+                        <span class="frecuencia">/mes</span>
+                    </div>
+                    <ul class="caracteristicas">
+                        <li>✓ Acceso 24/7</li>
+                        <li>✓ Entrenador personal</li>
+                        <li>✓ Clases unlimited</li>
+                        <li>✓ Nutrición incluida</li>
+                    </ul>
+                    <button class="btn btn-primary">Seleccionar</button>
+                </article>
+
+                <!-- TARJETA 3 -->
+                <article class="tarjeta">
+                    <div class="tarjeta-header">
+                        <h3>Plan Premium</h3>
+                        <span class="precio">$99.99</span>
+                        <span class="frecuencia">/mes</span>
+                    </div>
+                    <ul class="caracteristicas">
+                        <li>✓ Todo incluido Pro</li>
+                        <li>✓ Acceso VIP</li>
+                        <li>✓ Masajes relajantes</li>
+                        <li>✓ Sauna/Jacuzzi</li>
+                        <li>✓ Membresía familiar</li>
+                    </ul>
+                    <button class="btn btn-outline">Seleccionar</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE SERVICIOS -->
+        <section id="servicios" class="servicios">
+            <h2>Nuestros Servicios</h2>
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <div class="servicio-icon">🏋️</div>
+                    <h3>Entrenamiento Personalizado</h3>
+                    <p>Nuestros entrenadores certificados diseñarán un plan exclusivo para ti</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">🥗</div>
+                    <h3>Asesoría Nutricional</h3>
+                    <p>Planes de alimentación personalizados para máximos resultados</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">🧘</div>
+                    <h3>Yoga y Mindfulness</h3>
+                    <p>Clases relajantes para equilibrio físico y mental</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">💆</div>
+                    <h3>Masaje Terapéutico</h3>
+                    <p>Recuperación muscular y relajación profunda</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMULARIO DE INSCRIPCIÓN -->
+        <section id="contacto" class="formulario-section">
+            <h2>¿Listo para comenzar?</h2>
+            <form class="formulario" id="formInscripcion">
+                <fieldset>
+                    <legend>Formulario de Inscripción</legend>
+                    
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo:</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" required placeholder="+1 234 567 8900">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="plan">Selecciona tu Plan:</label>
+                        <select id="plan" name="plan" required>
+                            <option value="">-- Elige un plan --</option>
+                            <option value="basic">Plan Basic - $29.99</option>
+                            <option value="pro">Plan Pro - $59.99</option>
+                            <option value="premium">Plan Premium - $99.99</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje Adicional:</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos tus objetivos fitness..."></textarea>
+                    </div>
+
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="terminos" name="terminos" required>
+                        <label for="terminos">Acepto los términos y condiciones</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">Inscribirse Ahora</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>FitPower Gym</h3>
+                <p class="footer-slogan">Tu Mejor Versión Comienza Aquí</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>📍 Calle Fitness 123, Ciudad Salud</p>
+                <p>📧 info@fitpowergym.com</p>
+                <p>📱 +1 (555) 123-4567</p>
+                <p>⏰ Lun-Vie: 6am-11pm | Sáb-Dom: 8am-9pm</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="redes-sociales">
+                    <a href="https://facebook.com/fitpowergym" target="_blank" rel="noopener noreferrer">
+                        <span>📘 Facebook</span>
+                    </a>
+                    <a href="https://instagram.com/fitpowergym" target="_blank" rel="noopener noreferrer">
+                        <span>📷 Instagram</span>
+                    </a>
+                    <a href="https://twitter.com/fitpowergym" target="_blank" rel="noopener noreferrer">
+                        <span>🐦 Twitter</span>
+                    </a>
+                    <a href="https://youtube.com/fitpowergym" target="_blank" rel="noopener noreferrer">
+                        <span>▶️ YouTube</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 FitPower Gym. Todos los derechos reservados. | <a href="#">Privacidad</a> | <a href="#">Términos</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
